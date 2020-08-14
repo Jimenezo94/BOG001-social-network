@@ -30,7 +30,10 @@
     "jest": "^24.8.0",
     "regenerator-runtime": "^0.13.1",
     "serve": "^11.0.2",
-    "stylelint": "^10.1.0",
-    "stylelint-config-recommended": "^2.2.0"
-  }
+    "stylelint": "^13.6.1",
+    "stylelint-config-recommended": "^2.2.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {}
 }
