@@ -3,7 +3,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: './src/main.js',
   output: {
-   path: __dirname + '/dist',
+   path: __dirname + '/dist',/*ruta abosoula __dirname */
    filename: 'index.js'
   },
   module: {
@@ -20,6 +20,10 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+      test: /\.html$/i,
+      loader: 'html-loader',
+      }
     ],
    },
  plugins: [
