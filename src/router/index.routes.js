@@ -1,5 +1,5 @@
-import login from '../pages/login'
-import singup from '../pages/singup'
+import login from '../controllers/login';
+import singup from '../controllers/singup'
 
 let formLogin = document.querySelector(".box-login");
 let muro = document.querySelector('.time-line');
@@ -14,9 +14,11 @@ const router = (route) => {
     switch (route) {
     case '#/sign-up':
       return registro.appendChild(singup());
+
     case '#/box-login':{
         return formLogin.appendChild(login());
     }
+
     case '#/time-line': {
         return console.log(4)
     }
