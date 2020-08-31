@@ -3,6 +3,7 @@ import './main.scss' ;
 import {router} from './router/index.routes'
 
 router('#/box-login')
+
 window.addEventListener('hashchange', () => {
     router(window.location.hash)
 })

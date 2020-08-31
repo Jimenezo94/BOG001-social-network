@@ -1,4 +1,5 @@
 import singup from '../pages/singup.html'
+import { router } from '../router/index.routes';
 
  
 export default () => {
@@ -13,17 +14,27 @@ export default () => {
     let contraseña = divRegi.querySelector("#password");
 
     console.log(correo.value , contraseña.value)
-    firebase.auth().createUserWithEmailAndPassword(correo.value, contraseña.value).catch(function(error) {
- 
+     
+    
+    firebase.auth().createUserWithEmailAndPassword(correo.value, contraseña.value).then(function
+      () {
+        router ('#/time-line')
+      }).catch(function(error){ 
+      let errorCode = error.code;
+      let errorMessage = error.message;
 
-    console.log(error.message);
+      if(errorCode == 'auth/weak-password'){
+        alert('The password is too weak.');
+      } else { 
+        alert(errorMessage);
+      }
+      console.log(error);
 
+    })
     });
 
 
+    return divRegi;
     /*console.log(contraseña.value)*/
-   })
-
- return divRegi;
-};
+   }
 

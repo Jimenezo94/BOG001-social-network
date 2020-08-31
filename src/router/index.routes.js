@@ -1,5 +1,6 @@
 import login from '../controllers/login';
-import singup from '../controllers/singup'
+import singup from '../controllers/singup';
+import post from '../controllers/post';
 
 let formLogin = document.querySelector(".box-login");
 let muro = document.querySelector('.time-line');
@@ -20,7 +21,7 @@ const router = (route) => {
     }
 
     case '#/time-line': {
-        return console.log(4)
+        return muro.appendChild(post());
     }
       
     default:
