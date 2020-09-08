@@ -2,13 +2,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-size: 40px;
 }
 body {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background-image: linear-gradient(-225deg, #E3FDF5 0%, #dde7dd 100%);
 background: linear-gradient(to top, #a8edea 0%, #b6f88a 100%);
 background-attachment: fixed;
   background-repeat: no-repeat;
@@ -16,5 +11,60 @@ background-attachment: fixed;
     font-family: 'Vibur', cursive;
 /*   the main font */
     font-family: 'calibri', serif;
+    font-size: 30%;
 opacity: .95;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+}
+
+header {
+    font-size: 1.5rem;
+}
+buttonGoogle {
+    size: 10rem
+
+}
+#formLogin,
+#formSignUp {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	align-items: center;
+	font-size: 1.6em;
+	margin: auto 20%;
+}
+.contForm {
+    
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    margin-top: 40px;
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 45vw;
+    max-width: 350px;
+  
+    font-size: 30px;
+    color: black;
+    padding: 0;
+
+}
+.form-input {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    border: 2px solid black;
+    height:35px ;
+    border-radius: 5px;    
+}
+#input-text{
+    height: 65px;
+   padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+
 }

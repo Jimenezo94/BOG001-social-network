@@ -1,17 +1,17 @@
 import login from '../controllers/login';
 import singup from '../controllers/singup';
-import post from '../controllers/post';
+
+import {afterloading, elementosPost} from '../controllers/post';
 
 let formLogin = document.querySelector(".box-login");
 let muro = document.querySelector('.time-line');
 let registro = document.querySelector('.singup-up');
 
-
-
-const router = (route) => {
+const router = async (route) => {
     formLogin.innerHTML= ""
     muro.innerHTML=""
     registro.innerHTML=""
+    
     switch (route) {
     case '#/sign-up':
       return registro.appendChild(singup());
@@ -21,7 +21,10 @@ const router = (route) => {
     }
 
     case '#/time-line': {
-        return muro.appendChild(post());
+       const algo = await elementosPost()
+     
+       await muro.appendChild(algo);
+        return afterloading();
     }
       
     default:
@@ -29,6 +32,6 @@ const router = (route) => {
  
 }
 
-
 };
 export {router};
+
