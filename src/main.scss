@@ -68,3 +68,23 @@ buttonGoogle {
     justify-content: center; 
 
 }
+.user-name {
+    font-size:25px;
+}
+
+h1 {
+    font-size: 15px;
+}
+.tarjeta{
+     
+    max-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    margin-top: 40px;
+    border: 2px solid rgb(164, 150, 245);
+    border-radius: 5px;
+    width: 45vw;
+    max-width: 350px;
+}

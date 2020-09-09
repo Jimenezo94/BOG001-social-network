@@ -16,7 +16,6 @@ export const elementosPost = async () => {
                          
               </form>
               <div class='p'>
-                  nbh bh b
                       <div>
 
               <a href = '#/time-line' class="time-line"> </a>
@@ -44,7 +43,7 @@ const savePost = (description, email) =>   //Guarda comentarios en datos de fire
 
 export const afterloading = async () =>{
   let onGetTask = (callback) => data.collection('posts').onSnapshot(callback) 
-  let deletePost = id => data.collection('posts').doc(id).delete() //cada id es unico
+  let deletePost = id => data.collection('posts').doc(id).delete() 
   let PostsContainer = document.querySelector('.p');
   let commentBtn = document.querySelector('#b-post');
   let formulario = document.querySelector("#text-post")
@@ -55,29 +54,40 @@ export const afterloading = async () =>{
     console.log('intentando cambios');
     PostsContainer.innerHTML=""
     querySnapshot.forEach(doc => {
-      let post = doc.data()
-      post.id=doc.id
-      PostsContainer.innerHTML += `<h1> 
+      let post = doc.data() 
+      post.id = doc.id
+      PostsContainer.innerHTML += `<div class ="tarjeta"> <a href = "" class="user-name"> 
+      ${post.email}  </a>
+      <h1> 
         ${post.description} </h1> <div>  <button class="b-edith">Edith</button>
         <button class="b-delete" id="post-id" data-id="${post.id}" data-email="${post.email}">Delete</button>
+        <button class="b-like" id="post-id" > &#129505
+        </button>
+
+        </div>
         </div>`
         const btnsDelete = document.querySelectorAll('.b-delete')
-      btnsDelete.forEach(btn =>{
+      btnsDelete.forEach(btn =>{ 
         btn.addEventListener('click', async(e)=>{
           //console.log(e.target.dataset.id)
           let user = firebase.auth().currentUser;
          
           if( e.target.dataset.email === user.email ){ 
           await deletePost(e.target.dataset.id)}
+
         })
       })
+
+      const btnlike = document.querySelectorAll('.b-like')
+
+
       })
         console.log(formulario)
   }) 
   
   commentBtn.addEventListener('click', async(event) => {
     event.preventDefault()
-    console.log('click boton')
+    //console.log('click boton')
   let description = document.querySelector(".text").value
   console.log(description)
   let user = firebase.auth().currentUser;
