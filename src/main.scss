@@ -7,23 +7,30 @@ body {
 background: linear-gradient(to top, #a8edea 0%, #b6f88a 100%);
 background-attachment: fixed;
   background-repeat: no-repeat;
-
-    font-family: 'Vibur', cursive;
-/*   the main font */
-    font-family: 'calibri', serif;
-    font-size: 30%;
 opacity: .95;
 display: flex;
 justify-content: flex-end;
 align-items: center;
 }
 
-header {
+nav{ 
+    font-family: 'Vibur', cursive;
+    font-family: 'calibri', serif;
+    font-size: 30%;
     font-size: 1.5rem;
 }
-buttonGoogle {
-    size: 10rem
 
+#buttonGoogle{
+    font-size: 25px;
+    font-weight: 100;
+
+}
+.log-in{
+    size: 0ex;
+    position: center;
+  top: 80px;
+  left: 10px;
+  background: rgb(130, 188, 226);
 }
 #formLogin,
 #formSignUp {
@@ -42,8 +49,8 @@ buttonGoogle {
     justify-content: center; 
     align-items: center;
     margin-top: 40px;
-    border: 2px solid black;
-    border-radius: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
     width: 45vw;
     max-width: 350px;
   
