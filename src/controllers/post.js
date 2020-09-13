@@ -11,9 +11,7 @@ export const elementosPost = async () => {
                   <form class ="form" id = "text-post">
                       <input class= "text" type="text" id = "input-text" placeholder="write here">
                 
-                  
-                          <button id="b-post" type="submit">comment</button>
-                         
+                  <button id="b-post" type="submit">comment</button>       
               </form>
               <div class='p'>
                       <div>
@@ -39,7 +37,24 @@ const data = firebase.firestore();
 const savePost = (description, email) =>   //Guarda comentarios en datos de firebase 
   data.collection('posts').doc().set({
     description: description,
-    email : email })
+    email : email,
+    likes : []
+   })
+    
+
+const likePost = async (currentUserId, postId, pushLike) => {
+      const postRef = data.collection('post').doc(postId);
+      if (pushLike) {
+        postRef.update({
+          likes: firebase.firestore.FieldValue.arrayRemove(currentUserId),
+        });
+      } else {
+        postRef.update({
+          likes: firebase.firestore.FieldValue.arrayUnion(currentUserId),
+        });
+      }
+    }
+    
 
 export const afterloading = async () =>{
   let onGetTask = (callback) => data.collection('posts').onSnapshot(callback) 
@@ -65,17 +80,18 @@ export const afterloading = async () =>{
       <h1> ${post.description} </h1> 
         <div>  <button class="b-edith">Edith</button>
         <button class="b-delete" id="post-id" data-id="${post.id}" data-email="${post.email}">Delete</button>
-        <button class="b-like" id="like-id" > &#129505
-          <h2 id ="numero"> ${contador} </h2>
+        <button class="blike" id="like-id" data-id="${post.id}"  > &#129505
+          <h2 id ="numero"> "${contador}" </h2>
         </button>
 
         </div>
         </div>`
-        const btnsDelete = document.querySelectorAll('.b-delete')
+      const btnsDelete = document.querySelectorAll('.b-delete')
       btnsDelete.forEach(btn =>{ 
         btn.addEventListener('click', async(e)=>{
           //console.log(e.target.dataset.id)
           let user = firebase.auth().currentUser;
+          console.log(user.uid)
          
           if( e.target.dataset.email === user.email ){ 
           await deletePost(e.target.dataset.id)}
@@ -83,35 +99,34 @@ export const afterloading = async () =>{
         })
       })
 
-      const btnlike = document.querySelectorAll('.b-like')
+      const btnlike = document.querySelectorAll('.blike')
       
-       console.log(contador)
+      //console.log(contador)
       btnlike.forEach(like => {
         like.addEventListener('click', async(m) => { 
-          contador = contador + 1 ;
+          console.log(m.target)
+          /*contador = contador + 1 ; 
           document.getElementById("numero").innerHTML = contador
+          console.log(contador)*/
 
-          console.log(contador)
         })
       })
-
-
-      })
-        //console.log(formulario)
-  }) 
-  
+  })
+     
   commentBtn.addEventListener('click', async(event) => {
     event.preventDefault()
-    //console.log('click boton')
-  let description = document.querySelector(".text").value
-  //console.log(description)
-  let user = firebase.auth().currentUser;
-  //console.log(user.email, user.uid, user.emailVerified);
-  await savePost(description,user.email) 
-  formulario.reset()
+      //console.log('click boton')
+    let description = document.querySelector(".text").value
+    //console.log(description)
+    let user = firebase.auth().currentUser;
+    //console.log(user.email, user.uid, user.emailVerified);
+    await savePost(description,user.email) 
+    formulario.reset()
+  })
 })
+    }
+  
+  /*
 
 
-}
-
- 
+ */

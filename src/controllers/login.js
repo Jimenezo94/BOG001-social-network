@@ -40,12 +40,22 @@ export default () => {
 button.addEventListener('click', () => { 
  
   event.preventDefault()
-  //console.log (email.value)
-  //console.log(pswrd.value)
+ 
   firebase.auth().signInWithEmailAndPassword(email.value , pswrd.value)
   .then(function(){router("#/time-line")})
-  .catch(function(error)
-    {
+  .catch(function(error) 
+    { //console.log (error.message)
+      console.log(error.code)
+      
+      if (error.code == "auth/wrong-password") {
+        alert ("contraseña incorrecta")
+      }
+      else if (error.code == "auth/invalid-email"){
+        alert ("email incorrecto")
+      }
+      else if (error.code === "auth/user-not-found"){
+        alert ("usuario incorrecto")
+      }
          
     });
 

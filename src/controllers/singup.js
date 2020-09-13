@@ -22,15 +22,19 @@ export default () => {
         router ('#/time-line')
       })
         .catch(function(error){ 
-      let errorCode = error.code;
-      let errorMessage = error.message;
+          console.log (error)
+   
 
-      if(errorCode == 'auth/weak-password'){
-        alert('The password is too weak.');
-      } else { 
-        alert(errorMessage);
+      if(error.code == 'auth/invalid-email'){
+        alert('email invalido.');
       }
-      console.log(error);
+       else if (error.code == 'auth/weak-password'){
+        alert('Tu contraseña es muy debil. Escribe minimo 6 caracteres.') 
+      }
+      else if (error.code == 'auth/email-already-in-use'){
+        alert('Este correo ya esta en uso.') 
+      }
+      //console.log(error);
 
     })
     });
