@@ -1,24 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
   }
-
-body {
-background: linear-gradient(to top, #a8edea 0%, #b6f88a 100%);
-background-attachment: fixed;
-  background-repeat: no-repeat;
-opacity: .95;
-display: flex;
-justify-content: flex-end;
-align-items: center;
+body{
+    display: flex;
+    /*border: 15px solid green;*/
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    font-family: 'Patrick Hand', cursive;
+    /*space-around;*/
 }
+
+section{
+    background-color: aquamarine;
+    
+    height: 100%;
+    text-align: left;
+    line-height: 40px;
+    font-size: 30px;
+  }
 
 nav{ 
     font-family: 'Vibur', cursive;
-    font-family: 'calibri', serif;
-    font-size: 30%;
-    font-size: 1.5rem;
+    font-size: 40%;
+    align-items: center;
+    display: flex
+
 }
 
 #buttonGoogle{
@@ -43,8 +54,7 @@ nav{
 	margin: auto 20%;
 }
 .contForm {
-    
-    height: 50vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -54,7 +64,7 @@ nav{
     border-radius: 10px;
     width: 45vw;
     max-width: 350px;
-  
+    /*background-image: url(/images/1form.jpg);*/
     font-size: 30px;
     color: black;
     padding: 0;
@@ -70,11 +80,10 @@ nav{
 }
 #input-text{
     height: 65px;
-   padding: 2.5rem;
+   padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center; 
-
 }
 .user-name {
     font-size:25px;
@@ -84,15 +93,14 @@ h1 {
     font-size: 15px;
 }
 .tarjeta{
-     
-    max-height: 50vh;
+    font-family: 'IBM Plex Serif', serif;
     display: flex;
     flex-direction: column;
     justify-content: center; 
     align-items: center;
-    margin-top: 40px;
+    margin-top: 30px;
     border: 2px solid rgb(164, 150, 245);
     border-radius: 5px;
-    width: 45vw;
-    max-width: 350px;
+    width: 23vw;
+ 
 }

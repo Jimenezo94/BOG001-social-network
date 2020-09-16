@@ -41,15 +41,15 @@ const savePost = (description, email) =>   //Guarda comentarios en datos de fire
 
    let editStatus = false;
    let id = "";
-
-const likePost = async (currentUserId, postId, pushLike) => {
-      const postRef = data.collection('posts').doc(postId);
+                        
+ const likePost = async (currentUserId, postId, pushLike) => { 
+      const coleccionpost = data.collection('posts').doc(postId);
       if (pushLike) {
-        postRef.update({
+        coleccionpost.update({
           likes: firebase.firestore.FieldValue.arrayRemove(currentUserId),
         });
       } else {
-        postRef.update({
+        coleccionpost.update({
           likes: firebase.firestore.FieldValue.arrayUnion(currentUserId),
         });
       }
@@ -69,7 +69,6 @@ export const afterloading = async () =>{
    
   
   onGetTask((querySnapshot)=>{
-    //console.log('intentando cambios');
     PostsContainer.innerHTML=""
     querySnapshot.forEach(doc => {
       let post = doc.data() 
@@ -80,31 +79,33 @@ export const afterloading = async () =>{
         <div>  <button class="b-edit" data-id="${post.id}">Edit</button>
         <button class="b-delete" id="post-id" data-id="${post.id}" data-email="${post.email}">Delete</button>
         <button class="blike" id="like-id" data-id="${post.id}"  > &#129505 ${post.likes.length}</button>
-          <h2 id ="numero"> "${post.likes.length}" </h2>
+          
         </button>
 
         </div>
         </div>`
       const btnsDelete = document.querySelectorAll('.b-delete')
-      //console.log(btnsDelete)
+   
       btnsDelete.forEach(btn =>{ 
         btn.addEventListener('click', async(e)=>{
           //console.log(e.target.dataset.id)
           let user = firebase.auth().currentUser;
           console.log(user.uid)
-         
-          if( e.target.dataset.email === user.email ){ 
-          await deletePost(e.target.dataset.id)}
-        })
+          
+          let confirmar = window.confirm('¿Quieres eliminar tu post?') 
+          console.log(confirmar)
+          if (confirmar == true) {
+           if( e.target.dataset.email === user.email ){ 
+          await deletePost(e.target.dataset.id)}}
       })
+      })
+
 //funcion likes
       const btnsLike = document.querySelectorAll('.blike')
-      //console.log(btnsLike)
       let user = firebase.auth().currentUser;
       let pushLike = post.likes.some(likes => likes === user.uid);
 
       btnsLike.forEach(like => {
-        //console.log(like)
         like.addEventListener('click', async(m) => { 
           let idlikes = m.target.dataset.id
           let user = firebase.auth().currentUser;
@@ -142,17 +143,13 @@ export const afterloading = async () =>{
      
   commentBtn.addEventListener('click', async(event) => {
     event.preventDefault()
-      //console.log('click boton')
     let description = document.querySelector(".text").value
-    //console.log(description)
     let user = firebase.auth().currentUser;
-    //console.log(user.email, user.uid, user.emailVerified);
     if (!editStatus){ 
 
     await savePost(description,user.email) 
   } else {
     await updateEdit(id, {
-      //title: user.value,
       description: description
     })
 
@@ -161,15 +158,8 @@ export const afterloading = async () =>{
     formulario['b-post'].innerText = 'Publicar';
 
   }
-
-  //await getEdit();
     formulario.reset()
   })
 
 })
 }
-  
-  /*
-
-
- */

@@ -1,15 +1,18 @@
-import './main.scss' ;
+import './main.css' ;
 
 import {router} from './router/index.routes'
 
-router('#/box-login')
 
+firebase.auth().onAuthStateChanged(function(user) { //escuchador de estado de utenticacion
+    if (user) {
+        router('#/time-line')
+
+    } else {
+        router('#/box-login')
+    }
+  
+  });
+  
 window.addEventListener('hashchange', () => {
     router(window.location.hash)
 })
-
-
-// Este es el punto de entrada de tu aplicacion
-
-//import { myFunction } from './lib/index.js';
-//myFunction();

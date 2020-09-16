@@ -13,25 +13,18 @@ export default () => {
 
   let provider = new firebase.auth.GoogleAuthProvider();
 
+  // valida si hay una sesion
+
+
  //sesion con google
   buttonG.addEventListener('click', () => {
     event.preventDefault()
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      var token = result.credential.accessToken;
-      // The signed-in user info.
-      var user = result.user;
-      // ... 
+    firebase.auth().signInWithPopup(provider)
+    .then(function(result) {
+      let token = result.credential.accessToken;
       router("#/time-line")
     }).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
+    
     });
   })
 
@@ -44,8 +37,7 @@ button.addEventListener('click', () => {
   firebase.auth().signInWithEmailAndPassword(email.value , pswrd.value)
   .then(function(){router("#/time-line")})
   .catch(function(error) 
-    { //console.log (error.message)
-      console.log(error.code)
+    {        //console.log(error.code)
       
       if (error.code == "auth/wrong-password") {
         alert ("contraseña incorrecta")
