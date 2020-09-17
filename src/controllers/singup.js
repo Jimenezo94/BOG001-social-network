@@ -28,10 +28,10 @@ export default () => {
       if(error.code == 'auth/invalid-email'){
         alert('email invalido.');
       }
-       else if (error.code == 'auth/weak-password'){
+       if (error.code == 'auth/weak-password'){ 
         alert('Tu contraseña es muy debil. Escribe minimo 6 caracteres.') 
       }
-      else if (error.code == 'auth/email-already-in-use'){
+      if (error.code == 'auth/email-already-in-use'){
         alert('Este correo ya esta en uso.') 
       }
       //console.log(error);

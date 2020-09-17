@@ -1,34 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 * {
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
   }
-body{
+.content{
     display: flex;
-    /*border: 15px solid green;*/
-    padding: 10px;
+    flex-wrap: wrap;
+    border: 8px solid yellow;
     justify-content: center;
     align-items: center;
     align-content: space-around;
     font-family: 'Patrick Hand', cursive;
     /*space-around;*/
 }
-
-section{
-    background-color: aquamarine;
-    
-    height: 100%;
-    text-align: left;
-    line-height: 40px;
-    font-size: 30px;
-  }
-
 nav{ 
     font-family: 'Vibur', cursive;
     font-size: 40%;
     align-items: center;
-    display: flex
+    display: flex;
+    justify-content: space-around;
+  background-color: rgb(194, 228, 241);
 
 }
 
@@ -37,16 +27,8 @@ nav{
     font-weight: 100;
 }
 
-.log-in{
-    size: 0ex;
-    position: center;
-  top: 80px;
-  left: 10px;
-  background: rgb(130, 188, 226);
-}
 #formLogin,
 #formSignUp {
-	display: flex;
 	justify-content: space-around;
 	flex-direction: column;
 	align-items: center;
@@ -62,12 +44,11 @@ nav{
     margin-top: 40px;
     border: 1px solid black;
     border-radius: 10px;
-    width: 45vw;
-    max-width: 350px;
-    /*background-image: url(/images/1form.jpg);*/
+    width: 35vw;
     font-size: 30px;
     color: black;
     padding: 0;
+    background-color: rgb(156, 240, 116)
 
 }
 .form-input {
@@ -76,11 +57,11 @@ nav{
     margin-bottom: 15px;
     border: 2px solid black;
     height:35px ;
-    border-radius: 5px;    
+    border-radius: 11px;    
 }
 #input-text{
     height: 65px;
-   padding: 1rem;
+   padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -92,9 +73,18 @@ nav{
 h1 {
     font-size: 15px;
 }
+.time-line{
+
+        background-color: aquamarine;
+        
+        text-align: left;
+        line-height: 40px;
+        font-size: 30px;
+}
 .tarjeta{
     font-family: 'IBM Plex Serif', serif;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center; 
     align-items: center;

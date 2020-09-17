@@ -23,7 +23,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.8.0",
     "css": "^3.0.0",
-    "css-loader": "^4.2.1",
+    "css-loader": "^4.3.0",
     "eslint": "^6.0.1",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.2",
