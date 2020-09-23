@@ -1,6 +1,6 @@
 import login from '../controllers/login';
 import singup from '../controllers/singup';
-
+//login = require('../controllers/login') 
 import {afterloading, elementosPost} from '../controllers/post';
 
 let formLogin = document.querySelector(".box-login");

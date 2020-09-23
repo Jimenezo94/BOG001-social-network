@@ -1,6 +1,7 @@
-//import postviews from '../pages/post.js'
-import { router } from '../router/index.routes';
 
+import postviews from '../pages/post.js'
+import { router } from '../router/index.routes';
+import {data} from '../Firebase/inicio.js';
 
 export const elementosPost = async () => { 
 
@@ -11,7 +12,7 @@ export const elementosPost = async () => {
                   <form class ="form" id = "text-post">
                   <input class= "text" type="text" id = "input-text" placeholder="write here">
                 
-                  <button id="b-post" type="submit">comment</button>       
+                  <button id="b-post" type="submit">comment</button>   
               </form>
               <div class='p'>
                       <div>
@@ -31,7 +32,7 @@ export const elementosPost = async () => {
      return divElement
  };
 
-const data = firebase.firestore();   
+ //const data = firebase.firestore();   
 const savePost = (description, email) =>   //Guarda comentarios en datos de firebase 
   data.collection('posts').doc().set({
     description: description,

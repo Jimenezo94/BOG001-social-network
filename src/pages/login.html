@@ -1,28 +1,28 @@
 <div class="contForm">    
+  <a href="#"> <img src="/images/1form.jpg" alt="" class="logo"></a>
+  <a href="#"> <img src="/images/initlog.png" alt="" class="logof"></a>
   <h2>ECORed</h2>
-      <form id = "formLogin" class = "form">
-        <div class = "form-group">
+  <form id = "formLogin" class = "form">
+    <div class = "form-group">
           <input class="form-input" id="txt-input" type="email" placeholder="E-mail" required>
           <br>
         <!--   Password Input-->
           <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password" required>
       
-              <!--      Show/hide password  lo del ojito--> 
-          <span>
-              <i class="fa fa-eye" aria-hidden="true"  type="button" id="eye"></i>
-          </span><br>
+              <!--      Show/hide password  lo del ojito
+              <span>
+                <i class="fa fa-eye" aria-hidden="true"  type="button" id="eye"> </i>
+            </span><br>--> 
           <!--      login button -->
-          <button class="log-in" type="submits"> Log In </button>
-        </div>
-      </form>
-      <div class = 'signUp-google'>
-       
-        <button id = "buttonGoogle" type = "button-G">
-        <img class = "google-icon" alt = ""> </button>
-      </div>
-      <a href = "#/sign-up" class="login-register"> Registrarse </a>
-     
+        <button class="log-in" type="submits"> Log In </button>
     </div>
+  </form>
+  <div class = 'signUp-google'>
+        <button id = "buttonGoogle" type = "button-G" > <p> G </p> </button>
+  </div>
+  <a href = "#/sign-up" class="login-register"> Registrarse </a>
+     
+</div>
       <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
       <script src="../Firebase/inicio.js" type="module"></script>

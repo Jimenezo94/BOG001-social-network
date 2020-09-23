@@ -1,11 +1,42 @@
-import singup from '../pages/singup.html'
 import { router } from '../router/index.routes';
-
+import singup from '../pages/singup.html';
  
 export default () => { 
  
    const divRegi = document.createElement('div');
-   divRegi.innerHTML = singup;
+   divRegi.innerHTML = `
+   <div class="contForm">
+     <div class="signup-logo">
+       
+     </div>
+   
+     <h1 class = "title container-form">
+       Registrate
+     </h1>
+     <form id = "formSignUp" class = "form">
+   
+       <div class = "form-group">
+         <input class = "form-input" id = "email" type = "text" placeholder = "Correo" obligatorio>
+       </div>
+   
+       <div class = "form-group">
+          <input class = "form-input" id = "username" type = "text" placeholder = "User" obligatorio>
+      
+       </div>
+   
+     
+       <div class = "contraseña user">
+          <input class = "form-input"  type = "password" id = "password" placeholder = "Contraseña" obligatorio>
+   
+          <span class = "eye-icon" id = "eyeIcon"> </span>
+       </div>
+       <button type="submits" id = "btnnn" class = "btns" > Registrador </button>
+     </form>
+      
+      <h3> ¿Ya tienes cuenta? </h3>
+      <a href="#/box-login" id="return-login" class="login-register"> Inicia Sesion </a>
+      
+   </div>`;
    const button1 = divRegi.querySelector('#btnnn');
     
    button1.addEventListener("click", () => {
@@ -38,8 +69,7 @@ export default () => {
 
     })
     });
-
-
+  
     return divRegi;
     /*console.log(contraseña.value)*/
    }

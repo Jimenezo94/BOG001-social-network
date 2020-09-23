@@ -1,9 +1,8 @@
-/*{
-  "env": {
+/*"env": {
     "browser": true,
     "es6": true,
     "jest/globals": true
-  },
+},
   "extends": [
     "airbnb-base"
   ],
@@ -12,12 +11,13 @@
     "SharedArrayBuffer": "readonly",
     "firebase": "readonly"
   },
-  "plugins": ["jest"],
-  "parserOptions": {
+"plugins": ["jest"],
+"parserOptions": {
     "ecmaVersion": 2018,
-    "sourceType": "module"
-  },
-  "rules": {
+    "sourceType": "module",
+    
+},
+"rules": {
     "linebreak-style": 0,
     "prefer-destructuring": 0,
     "import/extensions": 0,
@@ -27,5 +27,20 @@
     "jest/no-identical-title": "error",
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error"
+  {
+    "parserOptions": {
+        "ecmaVersion": 2017
+    },
+
+    "env": {
+        "es6": true
+  },
+  },*/
+
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
   }
-}*/
+}

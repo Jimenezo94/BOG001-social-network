@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 * {
+    padding: 0;
     box-sizing: border-box;
   }
 .content{
+    margin: auto;
+    width:100%;
+    max-width: 100%;
     display: flex;
     flex-wrap: wrap;
-    border: 8px solid yellow;
+    border: 5px solid yellow;
     justify-content: center;
     align-items: center;
     align-content: space-around;
@@ -22,11 +26,35 @@ nav{
 
 }
 
-#buttonGoogle{
-    font-size: 25px;
-    font-weight: 100;
+.logo{
+    height: auto;
+    width:50%;
+    display: flex;
+    position: absolute;
+    padding-right: 3%;
+    padding-top: 5%;
+
+   z-index: -1;
+}
+.logof{
+    width:30%;
+    height:50px;
 }
 
+#buttonGoogle  {
+    width:12rem;
+    min-width: 100%;
+    background-color: rgb(197, 245, 188);
+    border: 2px solid currentColor;
+    box-sizing: border-box;
+    border-radius: 5px;
+    
+}
+p{
+    font-style: inherit;
+    font-size: 80%;
+    font-family: futura;
+}
 #formLogin,
 #formSignUp {
 	justify-content: space-around;
@@ -36,61 +64,64 @@ nav{
 	margin: auto 20%;
 }
 .contForm {
-    height: 80vh;
     display: flex;
+   padding-left: 28%;
     flex-direction: column;
-    justify-content: center; 
     align-items: center;
-    margin-top: 40px;
+    margin-top: 15px;
     border: 1px solid black;
     border-radius: 10px;
-    width: 35vw;
     font-size: 30px;
     color: black;
     padding: 0;
-    background-color: rgb(156, 240, 116)
+    background-color: transparent;
 
 }
 .form-input {
-    justify-content: center;
-    align-items: center;
     margin-bottom: 15px;
     border: 2px solid black;
     height:35px ;
     border-radius: 11px;    
+    
 }
 #input-text{
-    height: 65px;
+    height: 64%;
    padding: 1.5rem;
     display: flex;
-    flex-direction: column;
-    justify-content: center; 
 }
 .user-name {
-    font-size:25px;
+    font: size 10%;
 }
 
 h1 {
     font-size: 15px;
+    overflow: hidden;
 }
 .time-line{
 
-        background-color: aquamarine;
+        background-color: rgb(180, 235, 216);
         
-        text-align: left;
+        text-align: center;
         line-height: 40px;
         font-size: 30px;
 }
 .tarjeta{
     font-family: 'IBM Plex Serif', serif;
     display: flex;
-    flex-wrap: wrap;
+    box-sizing: border-box;
     flex-direction: column;
     justify-content: center; 
     align-items: center;
-    margin-top: 30px;
-    border: 2px solid rgb(164, 150, 245);
-    border-radius: 5px;
-    width: 23vw;
+    text-decoration-line: overline underline; 
+   
+  
+    width:80%;
+    min-width: 100%;
  
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+ background: #b4f5ec;
+    };
 }

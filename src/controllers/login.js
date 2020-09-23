@@ -1,5 +1,5 @@
-import login from '../pages/login.html'
-import { router } from '../router/index.routes';
+import {router} from '../router/index.routes';
+import login from '../pages/login.html';
 
 export default () => {
 
@@ -12,9 +12,6 @@ export default () => {
   let buttonG = divElement.querySelector('#buttonGoogle') 
 
   let provider = new firebase.auth.GoogleAuthProvider();
-
-  // valida si hay una sesion
-
 
  //sesion con google
   buttonG.addEventListener('click', () => {
